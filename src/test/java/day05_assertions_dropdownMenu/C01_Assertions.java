@@ -22,7 +22,9 @@ public class C01_Assertions {
         //  ○ imageTest   => YouTube resminin görüntülendiğini (isDisplayed()) test edin
         //  ○ Search Box 'in erisilebilir oldugunu test edin (isEnabled())
         //  ○ wrongTitleTest => Sayfa basliginin “youtube” olmadigini dogrulayin
-        static WebDriver driver;
+
+
+    static WebDriver driver;
         @BeforeClass
         public static void setup(){
             WebDriverManager.chromedriver().setup();
@@ -43,6 +45,7 @@ public class C01_Assertions {
             String expectedTitle= "YouTube";
             String actualTitle = driver.getTitle();
             Assert.assertEquals(expectedTitle,actualTitle);
+
         }
         @Test
         public void imageTest(){

@@ -30,14 +30,13 @@ public class C03_RadioButtons {
     }
     @After
     public void teardown(){
-        driver.close();
+        //driver.close();
     }
     @Test
     public void test01(){
         driver.get("https://facebook.com");
         //  b. Cookies’i kabul edin
-        driver.findElement(By.xpath("//button[text()='Allow essential and optional cookies']"))
-                .click();
+        driver.findElement(By.xpath("//button[@class='_42ft _4jy0 _9xo7 _4jy3 _4jy1 selected _51sy']")).click();
         //  c. Create an account buton’una basin
         driver.findElement(By.xpath("//*[text()='Create new account']")).click();
         //  d. Radio button elementlerini locate edin ve size uygun olani secin
@@ -45,6 +44,7 @@ public class C03_RadioButtons {
         WebElement maleElementi= driver.findElement(By.xpath("(//input[@type='radio'])[2]"));
         WebElement customElementi= driver.findElement(By.xpath("(//input[@type='radio'])[3]"));
         maleElementi.click();
+
         //  e. Sectiginiz radio button'un secili, otekilerin ise secili olmadigini test edin
         Assert.assertTrue(maleElementi.isSelected());
         Assert.assertFalse(femaleElementi.isSelected());
